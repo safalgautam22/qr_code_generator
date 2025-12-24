@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Text to QR Code Generator</h1>
+    </div>
+
+    <div class="bodySection">
+      <div class="leftSide">
+        <input type="text" id="text" placeholder="Enter your text here" />
+        <select name="sizes" id="sizes">
+          <option>Select the size of QR</option>
+          <option>100x100</option>
+          <option>150x150</option>
+          <option>200x200</option>
+          <option>300x300</option>
+        </select>
+        <button type="button" id="generateBtn">Generate QR</button>
+      </div>
+
+      <div class="rightSide">
+        <div class="qrWrapper">
+          <div id="qrCode">
+            <p id="message">Your QR will appear here</p>
+          </div>
+          <button id="downloadBtn">Download QR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS always at the bottom -->
+    <script src="script.js"></script>
+  </body>
+</html>

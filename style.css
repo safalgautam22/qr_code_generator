@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  font-weight: 600;
+}
+
+/* MAIN LAYOUT */
+.bodySection {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* LEFT SIDE (FORM) */
+.leftSide {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* INPUT & SELECT */
+.leftSide input,
+.leftSide select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.leftSide input:focus,
+.leftSide select:focus {
+  border-color: #0077ff;
+}
+
+/* BUTTON */
+.leftSide button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #0077ff;
+  color: white;
+  font-weight: 600;
+}
+
+.leftSide button:hover {
+  background-color: #005fd1;
+}
+
+/* RIGHT SIDE (QR AREA) */
+.rightSide {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* QR CONTAINER */
+#qrCode {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #bbb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+/* MESSAGE */
+#qrCode p {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+/* QR IMAGE */
+#qrCode img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* WRAPPER FOR QR + BUTTON */
+.qrWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* DOWNLOAD BUTTON */
+#downloadBtn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #2ecc71;
+  color: #fff;
+  font-weight: 600;
+}
+
+#downloadBtn:hover {
+  background-color: #27ae60;
+}
