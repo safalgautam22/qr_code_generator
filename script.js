@@ -31,8 +31,7 @@ function generateQR() {
   const size = options.value;
 
   if (size === "Select the size of QR") {
-    document.getElementById("message").innerText =
-      "Please select a QR size";
+    document.getElementById("message").innerText = "Please select a QR size";
     return;
   }
 
@@ -45,7 +44,7 @@ function generateQR() {
 
   const img = document.createElement("img");
   img.src = `https://api.qrserver.com/v1/create-qr-code/?size=${size}&data=${encodeURIComponent(
-    text
+    text,
   )}`;
   img.alt = "Generated QR Code";
 
@@ -53,12 +52,21 @@ function generateQR() {
   downloadBtn.disabled = false;
 }
 
-function downloadQR() {
+async function downloadQR() {
   const img = qrContainer.querySelector("img");
   if (!img) return;
 
+  const response = await fetch(img.src);
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  console.log(url);
+
   const link = document.createElement("a");
-  link.href = img.src;
-  link.download = "qr-code.png";
+  link.href = url;
+  link.download = "qr_code.png";
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
 }
